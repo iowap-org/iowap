@@ -6,6 +6,7 @@
 ---
 
 We only wanted a picture. We got a distributed orchestrator.
+I only want a picture. I built a capability mesh.
 
 IOWAP is a trust-based capability matcher for distributed nodes — a dumb coordinator that matches capabilities and routes workloads, but never orchestrates the details. Nodes claim what they can do, the relay connects them.
 
