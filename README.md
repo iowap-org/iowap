@@ -7,7 +7,15 @@
 
 I only want a picture. I built a capability mesh.
 
-IOWAP is a trust-based capability matcher for distributed nodes — a dumb coordinator that matches capabilities and routes workloads, but never orchestrates the details. Nodes claim what they can do, the relay connects them.
+The origin is embarrassingly simple. I wanted to generate an AI image on my Mac Mini — it has the GPU, it runs MLX/mflux. But my AI agent doesn't live on the Mac. It runs in a VM on my Proxmox server. So every time I asked for a picture, the agent had to reach across the network to a machine that wasn't its own.
+
+That gap — *the thing that thinks* and *the thing that does* living on different boxes — is the whole reason IOWAP exists. Not a grand architecture. Just: the Mac can generate images, the VM can't, and I wanted the VM to be able to ask the Mac to do it.
+
+So I built a dumb coordinator. Nodes claim what they can do, the relay connects them, and workloads get routed to whatever node actually has the capability. No orchestration, no micro-managing — just matching capability to task.
+
+For a picture. I built a whole platform and never stopped.
+
+I only want a picture. I built a capability mesh.
 
 ```
 iowap-org/
