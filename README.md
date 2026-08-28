@@ -12,17 +12,25 @@
 
 I only want a picture. I built a capability mesh.
 
-The origin is embarrassingly simple. I wanted to generate an AI image on my Mac Mini — it has the GPU, it runs MLX/mflux. But my AI agent doesn't live on the Mac. It runs in a VM on my Proxmox server. So every time I asked for a picture, the agent had to reach across the network to a machine that wasn't its own.
+The origin is embarrassingly simple. I wanted to generate an AI image on my Mac
+Mini — it has the GPU, it runs MLX/mflux. But my AI agent doesn't live on the
+Mac. It runs in a VM on my Proxmox server. So every time I asked for a picture,
+the agent had to reach across the network to a machine that wasn't its own.
 
-That gap — *the thing that thinks* and *the thing that does* living on different boxes — is the whole reason IOWAP exists. Not a grand architecture. Just: the Mac can generate images, the VM can't, and I wanted the VM to be able to ask the Mac to do it.
+That gap — *the thing that thinks* and *the thing that does* living on different
+boxes — is the whole reason IOWAP exists. Not a grand architecture. Just: the
+Mac can generate images, the VM can't, and I wanted the VM to be able to ask the
+Mac to do it.
 
-So I built a dumb coordinator. Nodes claim what they can do, the relay connects them, and workloads get routed to whatever node actually has the capability. No orchestration, no micro-managing — just matching capability to task.
+So I built a dumb coordinator. Nodes claim what they can do, the relay connects
+them, and workloads get routed to whatever node actually has the capability.
+No orchestration, no micro-managing — just matching capability to task.
 
 For a picture. I built a whole platform and never stopped.
 
 I only want a picture. I built a capability mesh.
 
-```
+```text
 iowap-org/
 ├── iowap              ← this repo (meta: story + architecture)
 ├── iowap-server       ← API, scheduler, auth, DB, dashboard, docs
@@ -35,7 +43,7 @@ iowap-org/
 ## Repos
 
 | Repo | Description | Commits |
-|------|-------------|---------|
+| ---- | ----------- | ------- |
 | [iowap-server](https://github.com/iowap-org/iowap-server) | The relay server — API, scheduler, auth, dashboard | 163 |
 | [iowap-node](https://github.com/iowap-org/iowap-node) | Node framework — build your own node (daemon + CLI) | 73 |
 | [iowap-storage](https://github.com/iowap-org/iowap-storage) | Reference storage-node implementation (Docker) | 15 |
@@ -61,7 +69,7 @@ curl -X POST http://localhost:8080/relay/v2/scheduler/task-simple \
 
 ## Architecture
 
-```
+```text
 ┌──────────┐    heartbeat/capabilities    ┌──────────┐
 │  NODE A  │ ◄───────────────────────────► │  RELAY   │
 │ (GPU)    │                               │  SERVER  │
