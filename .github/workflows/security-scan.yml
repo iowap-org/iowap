@@ -58,7 +58,7 @@ jobs:
           cache: enable
 
       - name: Run Gitleaks
-        run: gitleaks detect --source . --log-opts="--all" --redact --exit-code 1
+        run: gitleaks detect --source . --git-log-opts="--all" --redact --exit-code 1
 
   code-security:
     name: CodeQL Static Analysis
