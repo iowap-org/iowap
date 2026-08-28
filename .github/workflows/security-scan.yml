@@ -50,10 +50,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install Gitleaks
+        uses: jaxxstorm/action-install-gh-release@v1.12.0
+        with:
+          repo: gitleaks/gitleaks
+          tag: v8.27.2
+          cache: enable
+
       - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gitleaks detect --source . --log-opts="--all" --redact --exit-code 1
 
   code-security:
     name: CodeQL Static Analysis
