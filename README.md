@@ -3,6 +3,11 @@
 **Infrastructure · Offloading · Workload Assignment Platform**  
 *The Distributed Node Capability Framework*
 
+[![Tests & Linting](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml)
+[![Docker Build](https://github.com/iowap-org/iowap/actions/workflows/docker-build.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/docker-build.yml)
+[![Security Scan](https://github.com/iowap-org/iowap/actions/workflows/security-scan.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/security-scan.yml)
+[![Docs Validation](https://github.com/iowap-org/iowap/actions/workflows/docs-validate.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/docs-validate.yml)
+
 ---
 
 I only want a picture. I built a capability mesh.
