@@ -16,6 +16,8 @@ jobs:
   validate-markdown:
     name: Validate Markdown
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -34,6 +36,8 @@ jobs:
   check-links:
     name: Check Markdown Links
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4

@@ -10,6 +10,8 @@ jobs:
   test-lint:
     name: Test & Lint (${{ matrix.python-version }})
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       fail-fast: false
       matrix:
@@ -46,7 +48,7 @@ jobs:
 
       - name: Lint with pylint
         run: |
-          pylint $(git ls-files '*.py') --fail-under=8.0
+          git ls-files -z '*.py' | xargs -0 --no-run-if-empty pylint --fail-under=8.0
 
       - name: Type check with mypy
         run: |

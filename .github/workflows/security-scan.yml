@@ -12,6 +12,8 @@ jobs:
   dependency-audit:
     name: Python Dependency Audit
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -44,6 +46,8 @@ jobs:
   secret-scan:
     name: Secret Scanning (Gitleaks)
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
