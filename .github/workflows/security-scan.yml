@@ -70,13 +70,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Detect Python source files
+        id: detect-python
+        run: |
+          if git ls-files '*.py' | grep -q .; then
+            echo "has_python=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_python=false" >> "$GITHUB_OUTPUT"
+            echo "No Python files found — skipping Python CodeQL analysis."
+          fi
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
+        if: steps.detect-python.outputs.has_python == 'true'
         with:
           languages: python
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
+        if: steps.detect-python.outputs.has_python == 'true'
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+        if: steps.detect-python.outputs.has_python == 'true'
