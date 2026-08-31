@@ -33,8 +33,9 @@ I only want a picture. I built a capability mesh.
 iowap-org/
 ├── iowap              ← this repo (meta: story + architecture)
 ├── iowap-server       ← API, scheduler, auth, DB, dashboard, docs
-├── iowap-node         ← node framework: daemon, CLI, relay_client, handler_runner
-└── iowap-storage      ← reference storage node implementation (docker)
+├── iowap-node         ← node framework: daemon, CLI, capability management, handler runner
+├── iowap-storage      ← reference storage node implementation (docker)
+└── iowap-ha           ← Home Assistant: HAOS app (node container) + thin integration
 ```
 
 ---
@@ -46,6 +47,7 @@ iowap-org/
 | [iowap-server](https://github.com/iowap-org/iowap-server) | The relay server — API, scheduler, auth, dashboard | 163 |
 | [iowap-node](https://github.com/iowap-org/iowap-node) | Node framework — build your own node (daemon + CLI) | 73 |
 | [iowap-storage](https://github.com/iowap-org/iowap-storage) | Reference storage-node implementation (Docker) | 15 |
+| [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin integration | 1 |
 
 ## Quick Start
 
