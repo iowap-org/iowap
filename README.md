@@ -31,7 +31,7 @@ For a picture. I built a whole platform and never stopped.
 iowap-org/
 ├── iowap              ← this repo (meta: story + architecture)
 ├── iowap-server       ← relay server: API, scheduler, auth, DB, dashboard
-├── iowap-node         ← node framework: daemon, CLI, capability management, handler runner
+├── iowap-node         ← node framework: daemon, CLI, handlers
 ├── iowap-storage      ← reference storage node (docker)
 ├── iowap-ha           ← Home Assistant: HAOS app (node container) + thin integration
 ├── iowap-federation   ← federation node: bridge capabilities between relays (E2EE)
