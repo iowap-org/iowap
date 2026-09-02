@@ -27,27 +27,32 @@ No orchestration, no micro-managing — just matching capability to task.
 
 For a picture. I built a whole platform and never stopped.
 
-I only want a picture. I built a capability mesh.
-
 ```text
 iowap-org/
 ├── iowap              ← this repo (meta: story + architecture)
-├── iowap-server       ← API, scheduler, auth, DB, dashboard, docs
+├── iowap-server       ← relay server: API, scheduler, auth, DB, dashboard
 ├── iowap-node         ← node framework: daemon, CLI, capability management, handler runner
-├── iowap-storage      ← reference storage node implementation (docker)
-└── iowap-ha           ← Home Assistant: HAOS app (node container) + thin integration
+├── iowap-storage      ← reference storage node (docker)
+├── iowap-ha           ← Home Assistant: HAOS app (node container) + thin integration
+├── iowap-federation   ← federation node: bridge capabilities between relays (E2EE)
+├── iowap-docker       ← docker images: base, server, storage
+└── iowap-docs         ← documentation: setup, concepts, API reference
 ```
 
 ---
 
 ## Repos
 
-| Repo | Description | Commits |
-| ---- | ----------- | ------- |
-| [iowap-server](https://github.com/iowap-org/iowap-server) | The relay server — API, scheduler, auth, dashboard | 163 |
-| [iowap-node](https://github.com/iowap-org/iowap-node) | Node framework — build your own node (daemon + CLI) | 73 |
-| [iowap-storage](https://github.com/iowap-org/iowap-storage) | Reference storage-node implementation (Docker) | 15 |
-| [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin integration | 1 |
+| Repo | Description |
+| ---- | ----------- |
+| [iowap](https://github.com/iowap-org/iowap) | Meta-repo — story, architecture, links (this repo) |
+| [iowap-server](https://github.com/iowap-org/iowap-server) | Relay server — API, scheduler, auth, database, dashboard for node orchestration |
+| [iowap-node](https://github.com/iowap-org/iowap-node) | Node framework — daemon, CLI, capability management, handler runner. Build and register your own node |
+| [iowap-storage](https://github.com/iowap-org/iowap-storage) | Storage node — file storage, retrieval, and bridging for the IOWAP ecosystem |
+| [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
+| [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE |
+| [iowap-docker](https://github.com/iowap-org/iowap-docker) | Docker images — base, server & storage |
+| [iowap-docs](https://github.com/iowap-org/iowap-docs) | Documentation — setup, concepts, API reference, node guides |
 
 ## Quick Start
 
@@ -67,6 +72,8 @@ curl -X POST http://localhost:8080/relay/v2/scheduler/task-simple \
   -H "Content-Type: application/json" \
   -d '{"capability": "storage.archive", "payload": {"path": "/data"}}'
 ```
+
+Full setup, API reference and node guides live in [iowap-docs](https://github.com/iowap-org/iowap-docs).
 
 ## Architecture
 
