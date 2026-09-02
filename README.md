@@ -58,16 +58,16 @@ iowap-org/
 
 ```bash
 # 1. Start the relay server
-docker run -d --name iowap-server -p 8080:8080 \
+docker run -d --name iowap-server -p 8788:8788 \
   ghcr.io/iowap-org/iowap-server:latest
 
 # 2. Run a node (example: storage)
 docker run -d --name iowap-storage \
-  -e RELAY_URL=http://host.docker.internal:8080 \
+  -e RELAY_URL=http://host.docker.internal:8788 \
   ghcr.io/iowap-org/iowap-storage:latest
 
 # 3. Submit a task
-curl -X POST http://localhost:8080/relay/v2/scheduler/task-simple \
+curl -X POST http://localhost:8788/relay/v2/scheduler/task-simple \
   -H "Authorization: Bearer <node-token>" \
   -H "Content-Type: application/json" \
   -d '{"capability": "storage.archive", "payload": {"path": "/data"}}'
