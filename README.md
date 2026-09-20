@@ -35,7 +35,7 @@ iowap-org/
 ├── iowap-storage      ← reference storage node (docker)
 ├── iowap-ha           ← Home Assistant: HAOS app (node container) + thin integration
 ├── iowap-federation   ← federation node: bridge capabilities between relays (E2EE)
-├── iowap-docker       ← docker images: base, server, storage
+├── iowap-docker       ← docker images: base, server, storage, flow
 └── iowap-docs         ← documentation: setup, concepts, API reference
 ```
 
@@ -51,7 +51,8 @@ iowap-org/
 | [iowap-storage](https://github.com/iowap-org/iowap-storage) | Storage node — file storage, retrieval, and bridging for the IOWAP ecosystem |
 | [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
 | [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE |
-| [iowap-docker](https://github.com/iowap-org/iowap-docker) | Docker images — base, server & storage |
+| [iowap-flow](https://github.com/iowap-org/iowap-flow) | Flow runner — plan/fan-out/join orchestrator node (dumb Kanban) for the relay cluster |
+| [iowap-docker](https://github.com/iowap-org/iowap-docker) | Docker images — base, server, storage & flow |
 | [iowap-docs](https://github.com/iowap-org/iowap-docs) | Documentation — setup, concepts, API reference, node guides |
 
 ## Quick Start
