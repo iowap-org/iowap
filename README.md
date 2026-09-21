@@ -21,7 +21,7 @@ boxes — is the whole reason IOWAP exists. Not a grand architecture. Just: the
 Mac can generate images, the VM can't, and I wanted the VM to be able to ask the
 Mac to do it.
 
-So I built a dumb coordinator. Nodes claim what they can do, the relay connects
+So I built a minimal coordinator. Nodes claim what they can do, the relay connects
 them, and workloads get routed to whatever node actually has the capability.
 No orchestration, no micro-managing — just matching capability to task.
 
@@ -51,7 +51,7 @@ iowap-org/
 | [iowap-storage](https://github.com/iowap-org/iowap-storage) | Storage node — file storage, retrieval, and bridging for the IOWAP ecosystem |
 | [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
 | [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE |
-| [iowap-flow](https://github.com/iowap-org/iowap-flow) | Flow runner — plan/fan-out/join orchestrator node (dumb Kanban) for the relay cluster |
+| [iowap-flow](https://github.com/iowap-org/iowap-flow) | Flow runner — plan/fan-out/join orchestrator node (minimal Kanban) for the relay cluster |
 | [iowap-docker](https://github.com/iowap-org/iowap-docker) | Docker images — base, server, storage & flow |
 | [iowap-docs](https://github.com/iowap-org/iowap-docs) | Documentation — setup, concepts, API reference, node guides |
 
