@@ -9,7 +9,7 @@
 
 ---
 
-I only want a picture. I built a capability mesh.
+I only want a picture. I built a capability-based execution fabric.
 
 The origin is embarrassingly simple. I wanted to generate an AI image on my Mac
 Mini — it has the GPU, it runs MLX/mflux. But my AI agent doesn't live on the
@@ -43,16 +43,33 @@ iowap-org/
 
 ## Repos
 
+**Core**
+
 | Repo | Description |
 | ---- | ----------- |
 | [iowap](https://github.com/iowap-org/iowap) | Meta-repo — story, architecture, links (this repo) |
-| [iowap-server](https://github.com/iowap-org/iowap-server) | Relay server — API, scheduler, auth, database, dashboard for node orchestration |
+| [iowap-server](https://github.com/iowap-org/iowap-server) | Relay server — purpose-agnostic scheduler, API, auth, database, dashboard |
 | [iowap-node](https://github.com/iowap-org/iowap-node) | Node framework — daemon, CLI, capability management, handler runner. Build and register your own node |
+
+**Reference / official nodes**
+
+| Repo | Description |
+| ---- | ----------- |
 | [iowap-storage](https://github.com/iowap-org/iowap-storage) | Storage node — file storage, retrieval, and bridging for the IOWAP ecosystem |
-| [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
-| [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE |
 | [iowap-flow](https://github.com/iowap-org/iowap-flow) | Flow runner — plan/fan-out/join orchestrator node (minimal Kanban) for the relay cluster |
-| [iowap-docker](https://github.com/iowap-org/iowap-docker) | Docker images — base, server, storage & flow |
+| [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
+
+**Network extensions**
+
+| Repo | Description |
+| ---- | ----------- |
+| [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE. *Experimental — return path in development* |
+
+**Distribution & documentation**
+
+| Repo | Description |
+| ---- | ----------- |
+| [iowap-docker](https://github.com/iowap-org/iowap-docker) | Docker images — packaging layer: base, server, storage & flow |
 | [iowap-docs](https://github.com/iowap-org/iowap-docs) | Documentation — setup, concepts, API reference, node guides |
 
 ## Quick Start
@@ -77,6 +94,14 @@ curl -X POST http://localhost:8788/relay/v2/scheduler/task-simple \
 Full setup, API reference and node guides live in [iowap-docs](https://github.com/iowap-org/iowap-docs).
 
 ## Architecture
+
+**Relay routes. Nodes execute. Flows compose. Federation extends.**
+
+The relay server is a purpose-agnostic scheduler — it answers *WHERE can this
+task run?* Nodes execute handlers — they answer *HOW is one capability
+executed?* Flow runner composes capabilities into sequences — it answers *WHAT
+sequence of tasks should happen?* These are three distinct layers, and none of
+them orchestrates the others.
 
 ```text
 ┌──────────┐    heartbeat/capabilities    ┌──────────┐
