@@ -43,7 +43,7 @@ iowap-org/
 
 ## Repos
 
-**Core**
+### Core
 
 | Repo | Description |
 | ---- | ----------- |
@@ -51,7 +51,7 @@ iowap-org/
 | [iowap-server](https://github.com/iowap-org/iowap-server) | Relay server — purpose-agnostic scheduler, API, auth, database, dashboard |
 | [iowap-node](https://github.com/iowap-org/iowap-node) | Node framework — daemon, CLI, capability management, handler runner. Build and register your own node |
 
-**Reference / official nodes**
+### Reference / official nodes
 
 | Repo | Description |
 | ---- | ----------- |
@@ -59,13 +59,13 @@ iowap-org/
 | [iowap-flow](https://github.com/iowap-org/iowap-flow) | Flow runner — plan/fan-out/join orchestrator node (minimal Kanban) for the relay cluster |
 | [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
 
-**Network extensions**
+### Network extensions
 
 | Repo | Description |
 | ---- | ----------- |
 | [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE. *Experimental — return path in development* |
 
-**Distribution & documentation**
+### Distribution & documentation
 
 | Repo | Description |
 | ---- | ----------- |
