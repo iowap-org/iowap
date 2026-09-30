@@ -123,4 +123,4 @@ them orchestrates the others.
 
 ## License
 
-AGPL-3.0
+MIT — see [LICENSE](LICENSE).
