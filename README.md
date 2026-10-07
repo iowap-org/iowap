@@ -35,6 +35,7 @@ iowap-org/
 ├── iowap-storage      ← reference storage node (docker)
 ├── iowap-ha           ← Home Assistant: HAOS app (node container) + thin integration
 ├── iowap-federation   ← federation node: bridge capabilities between relays (E2EE)
+├── iowap-hermes-integration ← Hermes desktop: fleet control surface (plugin)
 ├── iowap-docker       ← docker images: base, server, storage, flow
 └── iowap-docs         ← documentation: setup, concepts, API reference
 ```
@@ -59,6 +60,12 @@ iowap-org/
 | [iowap-flow](https://github.com/iowap-org/iowap-flow) | Flow runner — plan/fan-out/join orchestrator node (minimal Kanban) for the relay cluster |
 | [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
 
+### Clients
+
+| Repo | Description |
+| ---- | ----------- |
+| [iowap-hermes-integration](https://github.com/iowap-org/iowap-hermes-integration) | Hermes desktop plugin — fleet status, task submission & tracking from the desktop app |
+
 ### Network extensions
 
 | Repo | Description |
@@ -80,8 +87,10 @@ docker run -d --name iowap-server -p 8788:8788 \
   ghcr.io/iowap-org/iowap-server:latest
 
 # 2. Run a node (example: storage)
+# keep the state volume — it holds the node identity
 docker run -d --name iowap-storage \
   -e RELAY_URL=http://host.docker.internal:8788 \
+  -v iowap-storage-state:/home/appuser/.relay \
   ghcr.io/iowap-org/iowap-storage:latest
 
 # 3. Submit a task
