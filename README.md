@@ -130,6 +130,35 @@ them orchestrates the others.
                                     └─────────────────────┘
 ```
 
+---
+
+## Position
+
+IOWAP is not an agent-communication protocol, a tool gateway, a workflow
+engine, or a task queue — and it does not compete with them. The closest
+neighbors, and where IOWAP differs:
+
+- **A2A (Agent2Agent)** — a standard for agent↔agent communication
+  (agent cards, task delegation). IOWAP routes *between machines* via
+  capability claims; agents are one client among several. A2A could ride on
+  IOWAP as a capability adapter node — not the other way round.
+- **MCP / MCP gateways** — centralized tool and MCP-server distribution for
+  agent processes. IOWAP operates below that layer: independent node daemons
+  on real devices, with heartbeat, load, and claim-based scheduling. An MCP
+  gateway would run *as a node*.
+- **Task queues (Celery, Asynq, taskiq)** — same mechanical layer, but
+  workers are deployed instead of advertising themselves. No capability
+  discovery, no heterogeneous device fleet.
+- **Multi-agent frameworks (Autogen, agent-framework, swarms)** — they
+  orchestrate agents inside one runtime. IOWAP is the device fabric *below*
+  the agents.
+- **Workflow tools (n8n, Activepieces)** — their "node" is a graph step in
+  one engine. IOWAP nodes are independently running machines, and the flow
+  runner composes *across* them.
+
+The one-liner: **the relay answers WHERE a task can run, nodes answer HOW,
+flows answer WHAT — no layer orchestrates the others.**
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
