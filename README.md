@@ -4,7 +4,7 @@
 *The Distributed Node Capability Framework*
 
 <p align="center">
-  <img src="assets/logo.png" alt="IOWAP logo — capability hub with connected nodes" width="192"/>
+  <img src="assets/logo.png" alt="IOWAP wordmark — the distributed node capability framework" width="256"/>
 </p>
 
 [![Tests & Linting](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml)
