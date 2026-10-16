@@ -3,9 +3,7 @@
 **Infrastructure · Offloading · Workload Assignment Platform**  
 *The Distributed Node Capability Framework*
 
-<p align="center">
-  <img src="assets/logo.png" alt="IOWAP wordmark — the distributed node capability framework" width="256"/>
-</p>
+![IOWAP wordmark](assets/logo.png)
 
 [![Tests & Linting](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml)
 [![Security Scan](https://github.com/iowap-org/iowap/actions/workflows/security-scan.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/security-scan.yml)
