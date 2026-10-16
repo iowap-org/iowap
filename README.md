@@ -3,6 +3,10 @@
 **Infrastructure · Offloading · Workload Assignment Platform**  
 *The Distributed Node Capability Framework*
 
+<p align="center">
+  <img src="assets/logo.png" alt="IOWAP logo — capability hub with connected nodes" width="192"/>
+</p>
+
 [![Tests & Linting](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/test-lint.yml)
 [![Security Scan](https://github.com/iowap-org/iowap/actions/workflows/security-scan.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/security-scan.yml)
 [![Docs Validation](https://github.com/iowap-org/iowap/actions/workflows/docs-validate.yml/badge.svg)](https://github.com/iowap-org/iowap/actions/workflows/docs-validate.yml)
