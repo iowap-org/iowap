@@ -113,8 +113,9 @@ Full setup, API reference and node guides live in [iowap-docs](https://github.co
 The relay server is a purpose-agnostic scheduler — it answers *WHERE can this
 task run?* Nodes execute handlers — they answer *HOW is one capability
 executed?* Flow runner composes capabilities into sequences — it answers *WHAT
-sequence of tasks should happen?* These are three distinct layers, and none of
-them orchestrates the others.
+sequence of tasks should happen?* — and it does so from one of those nodes,
+not from the relay. The relay never composes and never orchestrates; where a
+sequence matters, an optional flow node is the orchestrator.
 
 ```text
 ┌──────────┐    heartbeat/capabilities    ┌──────────┐
@@ -161,7 +162,8 @@ neighbors, and where IOWAP differs:
   runner composes *across* them.
 
 The one-liner: **the relay answers WHERE a task can run, nodes answer HOW,
-flows answer WHAT — no layer orchestrates the others.**
+flows answer WHAT — the relay itself orchestrates nothing; composition is the
+flow node's job.**
 
 ## License
 
