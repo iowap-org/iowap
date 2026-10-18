@@ -86,26 +86,43 @@ iowap-org/
 
 ## Quick Start
 
+Two containers: the relay server (schedules and routes) and a node that
+provides a capability.
+
 ```bash
 # 1. Start the relay server
 docker run -d --name iowap-server -p 8788:8788 \
   ghcr.io/iowap-org/iowap-server:latest
 
+# Expect {"status": "ok", "version": ..., "mode": "core"} from:
+curl http://localhost:8788/health
+
+# The entrypoint prints the master admin seed on first start - use it once to
+# log in at http://localhost:8788 and create your human admin.
+
 # 2. Run a node (example: storage)
-# keep the state volume — it holds the node identity
+# keep the state volume - it holds the node identity
 docker run -d --name iowap-storage \
   -e RELAY_URL=http://host.docker.internal:8788 \
   -v iowap-storage-state:/home/appuser/.relay \
   ghcr.io/iowap-org/iowap-storage:latest
 
-# 3. Submit a task
+# The node registers as "pending" - approve it in the relay dashboard
+# (dashboard -> nodes) or via the admin API. Only approved nodes claim work.
+
+# 3. Submit a task with the approved node's runtime token (rt_ - issued once
+# at approval, re-issued via the admin token endpoint if lost)
 curl -X POST http://localhost:8788/relay/v2/scheduler/task-simple \
   -H "Authorization: Bearer <node-token>" \
   -H "Content-Type: application/json" \
   -d '{"capability": "storage.archive", "payload": {"path": "/data"}}'
+# -> {"task_id": "...", "stage_id": "...", "status": "pending", "capability": "storage.archive"}
 ```
 
-Full setup, API reference and node guides live in [iowap-docs](https://github.com/iowap-org/iowap-docs).
+Track task progress on the dashboard or with `node-cli task wait <task_id>`
+(see [iowap-docs → CLI reference](https://github.com/iowap-org/iowap-docs)).
+Full setup, capability publishing and admin workflows live in
+[iowap-docs](https://github.com/iowap-org/iowap-docs).
 
 ## Architecture
 
