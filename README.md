@@ -38,7 +38,8 @@ iowap-org/
 ├── iowap-ha           ← Home Assistant: HAOS app (node container) + thin integration
 ├── iowap-federation   ← federation node: bridge capabilities between relays (E2EE)
 ├── iowap-hermes-integration ← Hermes desktop: fleet control surface (plugin)
-├── iowap-client-mcp    ← MCP toolkit: curated node-cli toolset for MCP-speaking agents
+├── iowap-client-mcp    ← MCP toolkit: curated node-cli toolset for
+│                           MCP-speaking agents
 ├── iowap-docker       ← docker images: base, server, storage, flow
 └── iowap-docs         ← documentation: setup, concepts, API reference
 ```
@@ -68,13 +69,13 @@ iowap-org/
 | Repo | Description |
 | ---- | ----------- |
 | [iowap-hermes-integration](https://github.com/iowap-org/iowap-hermes-integration) | Hermes desktop plugin — fleet status, task submission & tracking from the desktop app |
-| [iowap-client-mcp](https://github.com/iowap-org/iowap-client-mcp) | MCP stdio server — curated node-cli toolset (relay status, fleet, capabilities, task submit/result, artifact download, docs) so agents don't relearn the node CLI's pitfalls |
+| [iowap-client-mcp](https://github.com/iowap-org/iowap-client-mcp) | MCP stdio server — curated node-cli toolset (relay status, fleet, capabilities, task submit/result, artifact download, docs)[...]
 
 ### Network extensions
 
 | Repo | Description |
 | ---- | ----------- |
-| [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE. *V1 forward path implemented; result return leg open* |
+| [iowap-federation](https://github.com/iowap-org/iowap-federation) | Federation node — bridge capabilities between relays. Inbox/Outbox, transport-agnostic, E2EE. *V1 forward path implemented; [...]
 
 ### Distribution & documentation
 
