@@ -1,6 +1,6 @@
 # IOWAP
 
-**Infrastructure · Offloading · Workload Assignment Platform**  
+**Inter-Node Offload · Workload Advertisement · Protocol**  
 *The Distributed Node Capability Framework*
 
 ![IOWAP wordmark](assets/logo.png)
