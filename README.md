@@ -61,6 +61,7 @@ iowap-org/
 | Repo | Description |
 | ---- | ----------- |
 | [iowap-storage](https://github.com/iowap-org/iowap-storage) | Storage node — file storage, retrieval, and bridging for the IOWAP ecosystem |
+| [iowap-paperless](https://github.com/iowap-org/iowap-paperless) | Document-management node — Paperless-ngx wrapped as ordinary IOWAP capabilities: upload, search, tag, inbox, ingest watcher |
 | [iowap-flow](https://github.com/iowap-org/iowap-flow) | Flow runner — plan/fan-out/join orchestrator node (minimal Kanban) for the relay cluster |
 | [iowap-ha](https://github.com/iowap-org/iowap-ha) | Home Assistant — HAOS app (node container) + thin custom integration for submissions |
 
